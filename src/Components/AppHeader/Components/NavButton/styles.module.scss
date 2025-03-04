@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  font-size: 3rem;
+  align-items: center;
+}
+
+.link {
+  color: var(--font-color);
+  text-decoration: none;
+}

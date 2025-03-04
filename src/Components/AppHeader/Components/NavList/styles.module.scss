@@ -1,0 +1,11 @@
+.root {
+  width: 60%;
+  height: calc(var(--header-height) + 2rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 1px var(--primary-border) solid;
+  border-top: 0;
+  border-radius: 0 0 2rem 2rem;
+  background-color: var(--primary-bg-base);
+}
