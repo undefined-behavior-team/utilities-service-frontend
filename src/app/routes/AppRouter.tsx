@@ -1,6 +1,5 @@
-import { Page } from "../../Components/Page/Page";
+import { Page } from "@/Components/Page/Page";
 import { mainPageRoute } from "./main/config";
-
 import { Route, Routes } from "react-router-dom";
 import { readingsMainRoute } from "./readings/config";
 import { readingsApplyRoute } from "./readings/readingsHistory/config";

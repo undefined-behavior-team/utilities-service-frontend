@@ -1,0 +1,52 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  font-size: 18px;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.show-all {
+  color: var(--font-color-link);
+  cursor: pointer;
+}
+
+.cards {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  gap: 4rem;
+  overflow: auto;
+  margin: auto;
+}
+
+.button {
+  width: 17rem;
+  height: 5rem;
+  border-color: var(--primary-border);
+}
+.button:hover {
+  border-color: #4096ff;
+}
+.button:focus {
+  outline: none;
+}
+.button > span {
+  color: var(--font-color-link);
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 100%;
+  overflow: auto;
+}/*# sourceMappingURL=styles.module.css.map */
