@@ -29,6 +29,6 @@ body {
 *::before,
 *::after {
   //font-family: var(--font-primary);
-  color: var(--font-color);
+  color: var(--font-color-primary);
   box-sizing: border-box;
 }

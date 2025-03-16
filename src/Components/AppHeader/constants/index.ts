@@ -1,4 +1,4 @@
-import { appRouterPaths } from "../../../app/routes/appRouterPaths";
+import { appRouterPaths } from "@/app/routes/appRouterPaths";
 
 export const navLinks = [
   {
