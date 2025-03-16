@@ -9,4 +9,10 @@
 .link {
   color: var(--font-color-primary);
   text-decoration: none;
+  border: 4px solid transparent;
+  &-active {
+    color: var(--font-color-link-active);
+    border-bottom: 4px solid var(--font-color-link-active);
+    border-radius: 4px;
+  }
 }

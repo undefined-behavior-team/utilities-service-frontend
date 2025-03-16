@@ -5,4 +5,9 @@ export const appRouterPaths = {
     apply: "/readings/apply",
     history: "/readings/history",
   },
+  application: {
+    main: "/application",
+    apply: "/application/apply",
+    history: "/application/history",
+  },
 };

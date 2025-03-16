@@ -59,6 +59,7 @@ export const getReadingsHistoryColumns: () => ColumnType[] = () => {
       title: "Тип счётчика",
       dataIndex: ["counterType"],
       key: "counterType",
+      render: (value) => getTypeText(value),
     },
     {
       title: "Показания",

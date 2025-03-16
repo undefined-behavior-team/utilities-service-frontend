@@ -1,0 +1,22 @@
+.root {
+  width: 60%;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+.tabs-item {
+  font-size: 16px;
+}
+
+.field-status {
+  text-align: center;
+}
+
+.tag-status {
+  display: flex;
+  height: 3rem;
+  width: 8rem;
+  border-radius: 2rem;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=styles.module.css.map */
