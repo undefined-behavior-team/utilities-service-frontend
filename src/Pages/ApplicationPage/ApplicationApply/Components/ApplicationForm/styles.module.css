@@ -1,0 +1,41 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input {
+  height: 4rem;
+}
+.input-row {
+  font-size: 18px;
+  display: flex;
+  gap: 3rem;
+}
+.input-row__text {
+  flex-direction: column;
+}
+.input-cell {
+  width: 40%;
+}
+.input-cell__address {
+  width: 20%;
+}
+.input-street {
+  width: 60%;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.button {
+  width: 20rem;
+  height: 5rem;
+  font-size: 16px;
+}
+.button > span {
+  color: #ffffff;
+}/*# sourceMappingURL=styles.module.css.map */

@@ -10,8 +10,8 @@ export const navLinks = [
     label: "Показания",
   },
   {
-    path: "/main",
-    label: "/main",
+    path: appRouterPaths.application.apply,
+    label: "Заявки",
   },
   {
     path: "/main",

@@ -3,7 +3,7 @@ import { AppInput } from "@/shared/Components/AppInput";
 import styles from "./styles.module.css";
 import { AppForm } from "@/shared/Components/AppForm";
 
-export const ApplyForm = () => {
+export const ReadingsForm = () => {
   const formApi = useForm();
   return (
     <AppForm formApi={formApi}>
