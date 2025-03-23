@@ -8,3 +8,4 @@ export { QuestionMarkIcon } from "./QuestionMarkIcon";
 export { PlusIcon } from "./PlusIcon";
 export { PlusInCircleIcon } from "./PlusInCircleIcon";
 export { ElectricityIcon } from "./ElectricityIcon";
+export { DocumentIcon } from "./DocumentIcon";

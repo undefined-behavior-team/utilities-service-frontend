@@ -7,6 +7,11 @@ import { readingsHistoryRoute } from "./readings/readingsApply/config";
 import { applicationMainRoute } from "./application/config";
 import { applicationHistoryRoute } from "./application/applicationHistory/config";
 import { applicationApplyRoute } from "./application/applicationApply/config";
+import { accrualsRoute } from "./accruals/config";
+import { accrualsYearRoute } from "./accruals/accrualsYear/config";
+import { newsPageRoute } from "./news/config";
+import { servicesPageRoute } from "./services/config";
+import { profilePageRoute } from "./profile/config";
 
 export const AppRouter = () => {
   return (
@@ -41,6 +46,21 @@ export const AppRouter = () => {
             element={applicationHistoryRoute.element}
           />
         </Route>
+        <Route path={accrualsRoute.path} element={accrualsRoute.element}>
+          <Route
+            path={accrualsYearRoute.path}
+            element={accrualsYearRoute.element}
+          />
+        </Route>
+        <Route path={newsPageRoute.path} element={newsPageRoute.element} />
+        <Route
+          path={servicesPageRoute.path}
+          element={servicesPageRoute.element}
+        />
+        <Route
+          path={profilePageRoute.path}
+          element={profilePageRoute.element}
+        />
       </Route>
     </Routes>
   );
