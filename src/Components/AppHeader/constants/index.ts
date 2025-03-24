@@ -2,8 +2,8 @@ import { appRouterPaths } from "@/app/routes/appRouterPaths";
 
 export const navLinks = [
   {
-    path: "/main",
-    label: "/main",
+    path: appRouterPaths.accruals.main,
+    label: "Начисления",
   },
   {
     path: appRouterPaths.readings.apply,
@@ -14,11 +14,11 @@ export const navLinks = [
     label: "Заявки",
   },
   {
-    path: "/main",
-    label: "/main",
+    path: appRouterPaths.services,
+    label: "Услуги",
   },
   {
-    path: "/main",
-    label: "/main",
+    path: appRouterPaths.news,
+    label: "Новости",
   },
 ];

@@ -10,4 +10,11 @@ export const appRouterPaths = {
     apply: "/application/apply",
     history: "/application/history",
   },
+  accruals: {
+    main: "/accruals",
+    year: "/accruals/:year",
+  },
+  services: "/services",
+  news: "/news",
+  profile: "/profile",
 };

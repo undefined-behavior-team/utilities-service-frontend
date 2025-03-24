@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  width: 60%;
+  margin: auto;
+  margin-top: 5rem;
+  background-color: var(--secondary-bg);
+  gap: 3rem;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.description {
+  color: var(--font-color-secondary);
+  font-size: 2rem;
+}

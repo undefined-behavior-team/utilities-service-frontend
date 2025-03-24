@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0 4rem 0;
+  align-items: center;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.delete-all {
+  font-size: 1.5rem;
+  color: var(--font-color-link);
+  cursor: pointer;
+}
