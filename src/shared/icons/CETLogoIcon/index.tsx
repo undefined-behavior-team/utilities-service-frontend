@@ -1,10 +1,11 @@
 import { ComponentProps, forwardRef } from "react";
 
 export const CETLogoIcon = forwardRef<SVGSVGElement, ComponentProps<"svg">>(
-  ({ width = 80, height = 56, ...props }) => {
+  ({ width = 80, height = 56, ...props }, ref) => {
     return (
       <>
         <svg
+          ref={ref}
           width={width}
           height={height}
           viewBox="0 0 80 56"

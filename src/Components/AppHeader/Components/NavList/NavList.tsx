@@ -6,7 +6,9 @@ export const NavList = () => {
   return (
     <div className={styles.root}>
       {navLinks.map((item) => (
-        <NavButton path={item.path}>{item.label}</NavButton>
+        <NavButton key={item.label} path={item.path}>
+          {item.label}
+        </NavButton>
       ))}
     </div>
   );

@@ -3,10 +3,11 @@ import { ComponentProps, forwardRef } from "react";
 export const QuestionMarkIcon = forwardRef<
   SVGSVGElement,
   ComponentProps<"svg">
->(({ width = 32, height = 32, ...props }) => {
+>(({ width = 32, height = 32, ...props }, ref) => {
   return (
     <>
       <svg
+        ref={ref}
         width={width}
         height={height}
         viewBox="0 0 395 395"

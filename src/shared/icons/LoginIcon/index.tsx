@@ -1,10 +1,11 @@
 import { ComponentProps, forwardRef } from "react";
 
 export const LoginIcon = forwardRef<SVGSVGElement, ComponentProps<"svg">>(
-  ({ width = 40, height = 40, ...props }) => {
+  ({ width = 40, height = 40, ...props }, ref) => {
     return (
       <>
         <svg
+          ref={ref}
           width={width}
           height={height}
           viewBox="0 0 512 512"

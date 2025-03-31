@@ -12,54 +12,94 @@ import { accrualsYearRoute } from "./accruals/accrualsYear/config";
 import { newsPageRoute } from "./news/config";
 import { servicesPageRoute } from "./services/config";
 import { profilePageRoute } from "./profile/config";
+import { authPageRoute } from "./auth/config";
+import { ProtectedRoute } from "./ProtectedRoute/ProtectedRoute";
+import { AuthRoute } from "./AuthRoute/AuthRoute";
+import { adminPageRoute } from "./admin/config";
 
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<Page />}>
-        <Route path={mainPageRoute.path} element={mainPageRoute.element} />
+      <Route
+        path={authPageRoute.path}
+        element={<AuthRoute>{authPageRoute.element}</AuthRoute>}
+      />
+      <Route
+        path={adminPageRoute.path}
+        element={<ProtectedRoute>{adminPageRoute.element}</ProtectedRoute>}
+      />
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <Page />
+          </ProtectedRoute>
+        }
+      >
+        <Route
+          path={mainPageRoute.path}
+          element={<ProtectedRoute>{mainPageRoute.element}</ProtectedRoute>}
+        />
         <Route
           path={readingsMainRoute.path}
-          element={readingsMainRoute.element}
+          element={<ProtectedRoute>{readingsMainRoute.element}</ProtectedRoute>}
         >
           <Route
             index
             path={readingsApplyRoute.path}
-            element={readingsApplyRoute.element}
+            element={
+              <ProtectedRoute>{readingsApplyRoute.element}</ProtectedRoute>
+            }
           />
           <Route
             path={readingsHistoryRoute.path}
-            element={readingsHistoryRoute.element}
+            element={
+              <ProtectedRoute>{readingsHistoryRoute.element}</ProtectedRoute>
+            }
           />
         </Route>
         <Route
           path={applicationMainRoute.path}
-          element={applicationMainRoute.element}
+          element={
+            <ProtectedRoute>{applicationMainRoute.element}</ProtectedRoute>
+          }
         >
           <Route
             index
             path={applicationApplyRoute.path}
-            element={applicationApplyRoute.element}
+            element={
+              <ProtectedRoute>{applicationApplyRoute.element}</ProtectedRoute>
+            }
           />
           <Route
             path={applicationHistoryRoute.path}
-            element={applicationHistoryRoute.element}
+            element={
+              <ProtectedRoute>{applicationHistoryRoute.element}</ProtectedRoute>
+            }
           />
         </Route>
-        <Route path={accrualsRoute.path} element={accrualsRoute.element}>
+        <Route
+          path={accrualsRoute.path}
+          element={<ProtectedRoute>{accrualsRoute.element}</ProtectedRoute>}
+        >
           <Route
             path={accrualsYearRoute.path}
-            element={accrualsYearRoute.element}
+            element={
+              <ProtectedRoute>{accrualsYearRoute.element}</ProtectedRoute>
+            }
           />
         </Route>
-        <Route path={newsPageRoute.path} element={newsPageRoute.element} />
+        <Route
+          path={newsPageRoute.path}
+          element={<ProtectedRoute>{newsPageRoute.element}</ProtectedRoute>}
+        />
         <Route
           path={servicesPageRoute.path}
-          element={servicesPageRoute.element}
+          element={<ProtectedRoute>{servicesPageRoute.element}</ProtectedRoute>}
         />
         <Route
           path={profilePageRoute.path}
-          element={profilePageRoute.element}
+          element={<ProtectedRoute>{profilePageRoute.element}</ProtectedRoute>}
         />
       </Route>
     </Routes>

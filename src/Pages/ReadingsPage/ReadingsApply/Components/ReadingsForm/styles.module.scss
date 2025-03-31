@@ -21,3 +21,20 @@ label {
   flex-direction: column;
   gap: 1rem;
 }
+
+.button {
+  margin: auto;
+  margin-top: 3rem;
+  width: 20rem;
+  height: 5rem;
+  font-size: 16px;
+
+  & > span {
+    color: #ffffff;
+  }
+}
+
+.submit {
+  display: flex;
+  width: 100%;
+}

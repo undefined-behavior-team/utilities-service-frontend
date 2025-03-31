@@ -1,10 +1,11 @@
 import { ComponentProps, forwardRef } from "react";
 
 export const ProfileIcon = forwardRef<SVGSVGElement, ComponentProps<"svg">>(
-  ({ width = 50, height = 50, ...props }) => {
+  ({ width = 50, height = 50, ...props }, ref) => {
     return (
       <>
         <svg
+          ref={ref}
           width={width}
           height={height}
           viewBox="0 0 50 50"

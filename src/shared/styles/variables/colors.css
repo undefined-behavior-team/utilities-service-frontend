@@ -8,6 +8,9 @@
   --font-color-primary: #000000;
   --font-color-secondary: #5d708c;
   --font-color-link: #004f9e;
+  --font-color-link-nav: #535bf2;
   --font-color-link-active: #5993ff;
   --font-color-alternative: #1677ff;
+
+  --font-color-bright: #fbfbfb;
 }

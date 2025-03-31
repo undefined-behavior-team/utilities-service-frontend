@@ -12,11 +12,11 @@ export const navLinks = [
   {
     path: appRouterPaths.application.apply,
     label: "Заявки",
-  },
+  } /*,
   {
     path: appRouterPaths.services,
     label: "Услуги",
-  },
+  }*/,
   {
     path: appRouterPaths.news,
     label: "Новости",

@@ -1,22 +1,45 @@
 import { useForm } from "react-hook-form";
 import { AppInput } from "@/shared/Components/AppInput";
 import { AppForm } from "@/shared/Components/AppForm";
-import styles from "./styles.module.css";
-import { AppSelector } from "@/shared/Components/AppSelector";
 import { Button } from "antd";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { getMeterFormSchema } from "./schema";
+import { MeterFormValues } from "@/Pages/ReadingsPage/types";
+import { useAddMeterMutation } from "@/services/api/entities/meters/api";
+import { FormSelector } from "@/shared/Components/AppForm/FormSelector";
+import { FormInput } from "@/shared/Components/AppForm/FormInput";
+import styles from "./styles.module.css";
+import { FC } from "react";
 
-export const AddMeterForm = () => {
-  const formApi = useForm();
+type Props = {
+  setAddMeter: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const AddMeterForm: FC<Props> = ({ setAddMeter }) => {
+  const formApi = useForm({
+    resolver: yupResolver(getMeterFormSchema()),
+  });
+
+  const [addMeter] = useAddMeterMutation();
+
+  const submit = (data: MeterFormValues) => {
+    addMeter(data);
+    setAddMeter(false);
+    window.location.reload();
+  };
+
   return (
-    <AppForm formApi={formApi}>
+    <AppForm formApi={formApi} onSubmit={submit}>
       <div className={styles.root}>
         <label>
           Тип счётчика
-          <AppSelector
+          <FormSelector
+            name="name"
             options={[
-              { value: "HOT_WATER", label: "Горячая вода" },
-              { value: "COLD_WATER", label: "Холодная вода" },
-              { value: "GAS", label: "Газ" },
+              { value: "горячая вода", label: "Горячая вода" },
+              { value: "холодная вода", label: "Холодная вода" },
+              { value: "газ", label: "Газ" },
+              { value: "электричество", label: "Электричество" },
             ]}
             className={styles.input}
             placeholder="Выберите тип"
@@ -24,14 +47,27 @@ export const AddMeterForm = () => {
         </label>
         <label>
           Предыдущие показания
-          <AppInput className={styles.input} placeholder="Введите показания" />
+          <AppInput
+            className={styles.input}
+            placeholder="Введите показания"
+            disabled
+          />
         </label>
         <label>
           Текущие показания
-          <AppInput className={styles.input} placeholder="Введите показания" />
+          <FormInput
+            name="data"
+            className={styles.input}
+            placeholder="Введите показания"
+          />
         </label>
       </div>
-      <Button variant="solid" color="blue" className={styles.button}>
+      <Button
+        htmlType="submit"
+        variant="solid"
+        color="blue"
+        className={styles.button}
+      >
         Отправить
       </Button>
     </AppForm>
