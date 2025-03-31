@@ -37,11 +37,11 @@ export const AdminFormAdd: FC<Props> = ({ handleReturn }) => {
       <div className={styles["input-block"]}>
         <FormInput name="email" className={styles.input} placeholder="E-mail" />
         <FormInput
-          name="isAdmin"
-          type="checkbox"
-          //className={styles.input}
+          name="name"
+          className={styles.input}
+          placeholder="Имя"
+          suffix={false}
         />
-        <FormInput name="name" className={styles.input} placeholder="Имя" />
         <FormInput
           name="password"
           type="password"
@@ -58,6 +58,14 @@ export const AdminFormAdd: FC<Props> = ({ handleReturn }) => {
           className={styles.input}
           placeholder="Номер телефона"
         />
+        <label className={styles["checkbox-wrapper"]}>
+          Администратор
+          <FormInput
+            name="isAdmin"
+            type="checkbox"
+            className={styles.checkbox}
+          />
+        </label>
       </div>
       <Button
         variant="solid"

@@ -1,4 +1,7 @@
 .root {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   width: 60%;
   max-width: 30rem;
 }
@@ -16,9 +19,19 @@
 }
 
 .button {
+  align-self: center;
   width: 25rem;
   height: 5rem;
   & > span {
     color: var(--font-color-bright) !important;
+  }
+}
+
+.checkbox {
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-start;
   }
 }

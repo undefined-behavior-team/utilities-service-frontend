@@ -1,7 +1,8 @@
-import { Status } from "@/shared/types";
+import { Application, Status, User } from "@/shared/types";
 import { Tag } from "antd";
 import { ColumnType } from "antd/es/table";
 import styles from "../styles.module.css";
+import { ApplicationsHistory } from "../types";
 
 export const getStatusTag = (status: Status) => {
   switch (status) {
@@ -40,7 +41,7 @@ export const getApplicationColumns: () => ColumnType[] = () => {
   return [
     {
       title: "Дата",
-      dataIndex: ["date"],
+      dataIndex: ["createdAt"],
       key: "date",
     },
     {
@@ -55,12 +56,12 @@ export const getApplicationColumns: () => ColumnType[] = () => {
     },
     {
       title: "Тема",
-      dataIndex: ["topic"],
+      dataIndex: ["name"],
       key: "topic",
     },
     {
       title: "ФИО",
-      dataIndex: ["person"],
+      dataIndex: ["fullName"],
       key: "person",
     },
     {
@@ -69,4 +70,15 @@ export const getApplicationColumns: () => ColumnType[] = () => {
       key: "address",
     },
   ];
+};
+
+export const handleApplicationsHistory = (user: User, data: Application[]) => {
+  const history: ApplicationsHistory[] = [...data];
+  const address = Object.values(user.address)
+    .filter((value) => value)
+    .join(", ");
+  const fullName = `${user.firstName} ${user.middleName} ${user.lastName}`;
+  return history.map((item) => {
+    return (item = { ...item, address: address, fullName: fullName });
+  });
 };

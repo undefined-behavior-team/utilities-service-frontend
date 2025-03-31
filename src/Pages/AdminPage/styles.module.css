@@ -24,4 +24,21 @@
   top: 11rem;
   cursor: pointer;
   padding-right: 25rem;
+}
+
+.logout {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  cursor: pointer;
+  font-size: large;
+  align-items: center;
+  gap: 1rem;
+}
+.logout:hover {
+  color: var(--font-color-link-active);
+}
+.logout:hover > svg > g {
+  fill: var(--font-color-link);
 }/*# sourceMappingURL=styles.module.css.map */

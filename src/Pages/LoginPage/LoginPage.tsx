@@ -62,7 +62,7 @@ export const LoginPage = () => {
       )}
       {chosen && (
         <div className={styles.return} onClick={handleReturn}>
-          Назад
+          ← Назад
         </div>
       )}
       <LoginForm authType={authType} loginStep={loginStep} />

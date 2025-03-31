@@ -82,14 +82,16 @@ export const LoginFormUser: FC<Props> = ({ loginStep }) => {
                 />
               </div>
             </label>
-            <Button
-              variant="solid"
-              color="blue"
-              className={styles.button}
-              htmlType="submit"
-            >
-              Войти
-            </Button>
+            <div className={styles.controls}>
+              <Button
+                variant="solid"
+                color="blue"
+                className={styles.button}
+                htmlType="submit"
+              >
+                Войти
+              </Button>
+            </div>
           </>
         );
       }
@@ -105,14 +107,16 @@ export const LoginFormUser: FC<Props> = ({ loginStep }) => {
                 placeholder="Код"
               />
             </label>
-            <Button
-              variant="solid"
-              color="blue"
-              className={styles.button}
-              htmlType="submit"
-            >
-              Войти
-            </Button>
+            <div className={styles.controls}>
+              <Button
+                variant="solid"
+                color="blue"
+                className={styles.button}
+                htmlType="submit"
+              >
+                Войти
+              </Button>
+            </div>
           </>
         );
       }
