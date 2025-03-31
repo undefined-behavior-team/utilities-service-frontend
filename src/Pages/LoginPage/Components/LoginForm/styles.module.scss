@@ -1,0 +1,24 @@
+.root {
+  width: 60%;
+  max-width: 30rem;
+}
+
+.input {
+  width: 100%;
+  max-width: 30rem;
+  height: 3.5rem;
+  &-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+}
+
+.button {
+  width: 25rem;
+  height: 5rem;
+  & > span {
+    color: var(--font-color-bright) !important;
+  }
+}

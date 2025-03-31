@@ -57,13 +57,13 @@ export const getReadingsHistoryColumns: () => ColumnType[] = () => {
     },
     {
       title: "Тип счётчика",
-      dataIndex: ["counterType"],
+      dataIndex: ["meterType"],
       key: "counterType",
       render: (value) => getTypeText(value),
     },
     {
       title: "Показания",
-      dataIndex: ["readings"],
+      dataIndex: ["meterCount"],
       key: "readings",
     },
     {

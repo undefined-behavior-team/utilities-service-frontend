@@ -17,4 +17,8 @@ export const appRouterPaths = {
   services: "/services",
   news: "/news",
   profile: "/profile",
+  auth: "/auth",
+  admin: {
+    main: "/admin",
+  },
 };

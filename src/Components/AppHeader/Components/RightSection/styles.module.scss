@@ -4,9 +4,34 @@
   align-items: center;
   font-size: 2.5rem;
   font-weight: 500;
+  gap: 2rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: var(--font-color-primary);
   text-decoration: none;
+  &:hover {
+    color: var(--font-color-link-active);
+  }
+  &:hover {
+    & > svg > path {
+      fill: var(--font-color-link-active);
+    }
+  }
+}
+
+.logout {
+  cursor: pointer;
+  &:hover > g {
+    fill: var(--font-color-link);
+  }
 }

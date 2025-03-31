@@ -1,46 +1,22 @@
-import { Meter } from "@/shared/types";
 import styles from "./styles.module.css";
 import { MeterCard } from "./Components/MeterCard/MeterCard";
 import { Button } from "antd";
 import { PlusInCircleIcon } from "@/shared/icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AddMeterForm } from "./Components/AddMeterForm/AddMeterForm";
 import { useNavigate } from "react-router-dom";
 import { appRouterPaths } from "@/app/routes/appRouterPaths";
+import { useAppSelector } from "@/services/store/hooks";
+import { metersSelector } from "@/services/store/slices/meters/selectors";
 
 export const Meters = () => {
+  const data = useAppSelector(metersSelector);
   const [addMeter, setAddMeter] = useState(false);
   const navigate = useNavigate();
 
-  const data: Meter[] = [
-    {
-      id: "1",
-      meterType: "COLD_WATER",
-      meterCount: 0,
-    },
-    {
-      id: "2",
-      meterType: "GAS",
-      meterCount: 123,
-    },
-    {
-      id: "3",
-      meterType: "GAS",
-      meterCount: 321,
-    },
-    {
-      id: "4",
-      meterType: "ELECTRICITY",
-      meterCount: 0,
-    },
+  console.log("data", data);
 
-    {
-      id: "5",
-      meterType: "ELECTRICITY",
-      meterCount: 0,
-    },
-  ];
-
+  useEffect(() => {}, [addMeter]);
   return (
     <div className={styles.root}>
       <div className={styles.header}>
@@ -77,7 +53,7 @@ export const Meters = () => {
           Добавить счётчик
         </Button>
       </div>
-      {addMeter && <AddMeterForm />}
+      {addMeter && <AddMeterForm setAddMeter={setAddMeter} />}
     </div>
   );
 };

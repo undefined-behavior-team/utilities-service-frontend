@@ -1,10 +1,11 @@
 import { ComponentProps, forwardRef } from "react";
 
 export const ElectricityIcon = forwardRef<SVGSVGElement, ComponentProps<"svg">>(
-  ({ width = 40, height = 40, ...props }) => {
+  ({ width = 40, height = 40, ...props }, ref) => {
     return (
       <>
         <svg
+          ref={ref}
           width={width}
           height={height}
           viewBox="0 0 398.528 398.528"
@@ -13,12 +14,12 @@ export const ElectricityIcon = forwardRef<SVGSVGElement, ComponentProps<"svg">>(
           xmlSpace="preserve"
           {...props}
         >
-          <g id="SVGRepo_bgCarrier" stroke-width="0" />
+          <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
           <g
             id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
 
           <g id="SVGRepo_iconCarrier">
