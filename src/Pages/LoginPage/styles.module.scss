@@ -4,7 +4,7 @@
   flex-direction: column;
   margin: auto;
   padding-top: 15rem;
-  gap: 5rem;
+  gap: 7rem;
   align-items: center;
 }
 
@@ -24,6 +24,8 @@
 
 .return {
   position: absolute;
-  top: 37rem;
+  top: 38rem;
   cursor: pointer;
+  font-size: medium;
+  color: var(--font-color-secondary);
 }

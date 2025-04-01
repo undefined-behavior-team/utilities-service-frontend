@@ -41,14 +41,16 @@ export const LoginFormAdmin = () => {
           placeholder="Пароль"
         />
       </div>
-      <Button
-        variant="solid"
-        color="blue"
-        className={styles.button}
-        htmlType="submit"
-      >
-        Войти
-      </Button>
+      <div className={styles.controls}>
+        <Button
+          variant="solid"
+          color="blue"
+          className={styles.button}
+          htmlType="submit"
+        >
+          Войти
+        </Button>
+      </div>
     </AppForm>
   );
 };

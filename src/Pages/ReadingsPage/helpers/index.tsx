@@ -5,8 +5,9 @@ import {
   HotWaterIcon,
   QuestionMarkIcon,
 } from "@/shared/icons";
-import { MeterTypes } from "@/shared/types";
+import { Meter, MeterTypes, User } from "@/shared/types";
 import { ColumnType } from "antd/es/table";
+import { ReadingsHistory } from "../types";
 
 export const getTypeIcon = (meterType?: MeterTypes) => {
   switch (meterType) {
@@ -52,7 +53,7 @@ export const getReadingsHistoryColumns: () => ColumnType[] = () => {
   return [
     {
       title: "Дата",
-      dataIndex: ["readingsDate"],
+      dataIndex: ["createdAt"],
       key: "date",
     },
     {
@@ -72,4 +73,14 @@ export const getReadingsHistoryColumns: () => ColumnType[] = () => {
       key: "address",
     },
   ];
+};
+
+export const handleReadingHistory = (user: User, data: Meter[]) => {
+  const history: ReadingsHistory[] = [...data];
+  const address = Object.values(user.address)
+    .filter((value) => value)
+    .join(", ");
+  return history.map((item) => {
+    return (item = { ...item, address: address });
+  });
 };

@@ -23,6 +23,7 @@ export const ReadingsPage = () => {
       validArray.push({
         meterType: handleMeterType(item.meterName.toLowerCase().trim()),
         meterCount: item.data,
+        createdAt: item.createdAt,
       })
     );
     return validArray;

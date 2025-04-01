@@ -23,9 +23,8 @@ export const AddMeterForm: FC<Props> = ({ setAddMeter }) => {
   const [addMeter] = useAddMeterMutation();
 
   const submit = (data: MeterFormValues) => {
-    addMeter(data);
     setAddMeter(false);
-    window.location.reload();
+    addMeter(data).then(() => window.location.reload());
   };
 
   return (

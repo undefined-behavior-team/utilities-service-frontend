@@ -24,6 +24,7 @@ export type Meter = {
   id?: string;
   meterType: MeterTypes;
   meterCount: number;
+  createdAt?: string;
 };
 
 export type Admin = {
@@ -47,5 +48,15 @@ export type Payment = {
   paymentMethod: string;
   amount: number;
   status: string;
-  createdAt: string;
+  createdAt?: string;
+};
+
+export type Application = {
+  id?: string;
+  applicationType?: number;
+  name: string;
+  description: string;
+  createdAt?: string;
+  updateUt?: string;
+  status?: number;
 };

@@ -1,37 +1,19 @@
 import { AppTable } from "@/shared/Components/AppTable";
-import { getApplicationColumns } from "../helpers";
+import { getApplicationColumns, handleApplicationsHistory } from "../helpers";
+import { applicationsSelector } from "@/services/store/slices/applications/selectors";
+import { useAppSelector } from "@/services/store/hooks";
+import { userSelector } from "@/services/store/slices/user/selectors";
 
 export const ApplicationHistory = () => {
-  const data = [
-    {
-      id: "3",
-      date: "01.01.2025",
-      status: "NEW",
-      topic: "Тема заявки",
-      person: "Зачем То Там",
-      address: "ул. Пушкина, д.Колотушкина, корпус 2, кв.3",
-    },
-    {
-      id: "2",
-      date: "01.01.2025",
-      status: "RECEIVED",
-      topic: "Тема заявки",
-      person: "Что То Там",
-      address: "ул.Пушкина, д.Колотушкина, корпус 2, кв.2",
-    },
-    {
-      id: "1",
-      date: "01.01.2025",
-      status: "DONE",
-      topic: "Тема заявки",
-      person: "Кто То Там",
-      address: "ул.Пушкина, д.Колотушкина, корпус 2, кв.1",
-    },
-  ];
+  const data = useAppSelector(applicationsSelector);
+  const user = useAppSelector(userSelector);
 
   return (
     <div>
-      <AppTable columns={getApplicationColumns()} dataSource={data} />
+      <AppTable
+        columns={getApplicationColumns()}
+        dataSource={handleApplicationsHistory(user, data)}
+      />
     </div>
   );
 };

@@ -1,4 +1,7 @@
 .root {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   width: 60%;
   max-width: 30rem;
 }
@@ -13,6 +16,10 @@
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+}
+
+.controls {
+  align-self: center;
 }
 
 .button {
