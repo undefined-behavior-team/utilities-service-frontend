@@ -1,11 +1,26 @@
 import { AppTable } from "@/shared/Components/AppTable";
-import { useParams } from "react-router-dom";
 import { getAccrualsColumns } from "../helpers";
-import { mockupData2023, mockupData2024, mockupData2025 } from "../const";
+import { useAppSelector } from "@/services/store/hooks";
+import { Button } from "antd";
+import { useAddPaymentMutation } from "@/services/api/entities/payments/api";
+import { paymentsSelector } from "@/services/store/slices/payments/selectors";
 
 export const AccrualsYear = () => {
+  const data = useAppSelector(paymentsSelector);
+
+  const [addPayment] = useAddPaymentMutation();
+
+  const submit = () => {
+    addPayment({
+      paymentMethod: "test",
+      amount: 123,
+      status: "test",
+    });
+  };
+
+  /*
   const { year } = useParams();
-  console.log("params", year);
+  
   const getDataSource = () => {
     switch (year) {
       case "2025": {
@@ -18,10 +33,17 @@ export const AccrualsYear = () => {
         return mockupData2023;
       }
     }
-  };
+  };*/
   return (
     <div>
-      <AppTable columns={getAccrualsColumns()} dataSource={getDataSource()} />
+      <Button
+        onClick={() => {
+          submit();
+        }}
+      >
+        Отправить
+      </Button>
+      <AppTable columns={getAccrualsColumns()} dataSource={data} />
     </div>
   );
 };

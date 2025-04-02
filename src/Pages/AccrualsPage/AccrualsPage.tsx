@@ -1,12 +1,26 @@
 import { Tabs } from "antd";
 import { Outlet, useNavigate, useParams } from "react-router-dom";
 import styles from "./styles.module.css";
+import { useAppDispatch } from "@/services/store/hooks";
+import { useGetPaymentsMutation } from "@/services/api/entities/payments/api";
+import { useEffect } from "react";
+import { setPayments } from "@/services/store/slices/payments/state";
 
 export const AccrualsPage = () => {
   const navigate = useNavigate();
   const { year } = useParams(); //as unknown as string;
 
-  const data = ["2023", "2024", "2025"];
+  const data = ["2025"];
+
+  const dispatch = useAppDispatch();
+
+  const [getPayments] = useGetPaymentsMutation();
+
+  useEffect(() => {
+    getPayments()
+      .unwrap()
+      .then((data) => dispatch(setPayments(data)));
+  }, [dispatch]);
 
   return (
     <div className={styles.root}>

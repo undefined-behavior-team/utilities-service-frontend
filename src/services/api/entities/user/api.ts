@@ -1,9 +1,5 @@
 import { rootApi } from "../../api";
 import {
-  AddPaymentRequest,
-  AddPaymentResponse,
-  GetPaymentsRequest,
-  GetPaymentsResponse,
   GetUserRequest,
   GetUserResponse,
   UpdateUserRequest,
@@ -26,28 +22,7 @@ const userApi = rootApi.injectEndpoints({
         method: "GET",
       }),
     }),
-
-    addPayment: build.mutation<AddPaymentResponse, AddPaymentRequest>({
-      query: (body) => ({
-        url: "client/add_payment",
-        method: "POST",
-        body: body,
-        responseHandler: (response) => response.text(),
-      }),
-    }),
-    getPayments: build.mutation<GetPaymentsResponse, GetPaymentsRequest>({
-      query: (body) => ({
-        url: "client/get_client_payment",
-        method: "GET",
-        body: body,
-      }),
-    }),
   }),
 });
 
-export const {
-  useUpdateUserMutation,
-  useGetUserMutation,
-  useAddPaymentMutation,
-  useGetPaymentsMutation,
-} = userApi;
+export const { useUpdateUserMutation, useGetUserMutation } = userApi;

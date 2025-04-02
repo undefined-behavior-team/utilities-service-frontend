@@ -4,12 +4,12 @@ export const getAccrualsColumns: () => ColumnType[] = () => {
   return [
     {
       title: "Дата",
-      dataIndex: ["date"],
+      dataIndex: ["createdAt"],
       key: "date",
     },
     {
       title: "Операция",
-      dataIndex: ["operation"],
+      dataIndex: ["paymentMethod"],
       key: "operation",
     },
     {
@@ -19,7 +19,7 @@ export const getAccrualsColumns: () => ColumnType[] = () => {
     },
     {
       title: `Оплачено (Без пени)`,
-      dataIndex: ["paid"],
+      dataIndex: ["amount"],
       key: "paid",
     },
     {
