@@ -1,15 +1,15 @@
 import { AppTable } from "@/shared/Components/AppTable";
 import { getAccrualsColumns } from "../helpers";
 import { useAppSelector } from "@/services/store/hooks";
-import { Button } from "antd";
-import { useAddPaymentMutation } from "@/services/api/entities/payments/api";
+//import { Button } from "antd";
+//import { useAddPaymentMutation } from "@/services/api/entities/payments/api";
 import { paymentsSelector } from "@/services/store/slices/payments/selectors";
 
 export const AccrualsYear = () => {
   const data = useAppSelector(paymentsSelector);
 
+  /*
   const [addPayment] = useAddPaymentMutation();
-
   const submit = () => {
     addPayment({
       paymentMethod: "test",
@@ -17,7 +17,7 @@ export const AccrualsYear = () => {
       status: "test",
     });
   };
-
+*/
   /*
   const { year } = useParams();
   
@@ -36,14 +36,17 @@ export const AccrualsYear = () => {
   };*/
   return (
     <div>
-      <Button
+      <AppTable columns={getAccrualsColumns()} dataSource={data} />
+    </div>
+  );
+};
+
+/*
+ <Button
         onClick={() => {
           submit();
         }}
       >
         Отправить
       </Button>
-      <AppTable columns={getAccrualsColumns()} dataSource={data} />
-    </div>
-  );
-};
+*/

@@ -20,13 +20,14 @@ export const AdminPage = () => {
 
   return (
     <>
-      <div className={styles.logout}>
+      <div
+        onClick={() => {
+          dispatch(logout());
+        }}
+        className={styles.logout}
+      >
         Выйти
-        <LoginIcon
-          onClick={() => {
-            dispatch(logout());
-          }}
-        />
+        <LoginIcon />
       </div>
       <div className={styles.root}>
         {!chosen && (
