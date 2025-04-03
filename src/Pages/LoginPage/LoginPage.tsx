@@ -9,7 +9,7 @@ import { Button } from "antd";
 import classNames from "classnames";
 import { setAuthType, setLoginStep } from "@/services/store/slices/login/state";
 import { AUTH_TYPES } from "@/shared/constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 
 export const LoginPage = () => {
@@ -36,6 +36,12 @@ export const LoginPage = () => {
     dispatch(setLoginStep(0));
     setChosen(false);
   };
+
+  useEffect(() => {
+    if (!chosen) {
+      dispatch(setAuthType(null));
+    }
+  }, []);
 
   return (
     <div className={styles.root}>
