@@ -60,3 +60,12 @@ export type Application = {
   updateUt?: string;
   status?: number;
 };
+
+export type TokenData = {
+  role: string;
+  id: string;
+  type: string;
+  sub: string;
+  iat: string;
+  exp: string;
+};

@@ -38,7 +38,12 @@
   &:hover {
     color: var(--font-color-link-active);
   }
-  &:hover >svg> g {
+  &:hover > svg > g {
     fill: var(--font-color-link);
   }
+}
+
+.form {
+  width: 100%;
+  cursor: pointer;
 }

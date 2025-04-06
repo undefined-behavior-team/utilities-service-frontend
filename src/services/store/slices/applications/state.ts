@@ -5,6 +5,7 @@ import { ApplicationState } from "./types";
 
 const initialState: ApplicationState = {
   currentApplications: [],
+  selectedApplication: null,
 };
 
 export const applicationsSlice = createSlice({
@@ -13,4 +14,5 @@ export const applicationsSlice = createSlice({
   reducers: reducers,
 });
 
-export const { setApplications } = applicationsSlice.actions;
+export const { setApplications, setSelectedApplication } =
+  applicationsSlice.actions;

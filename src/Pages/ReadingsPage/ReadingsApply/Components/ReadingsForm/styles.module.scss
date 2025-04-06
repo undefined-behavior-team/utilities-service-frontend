@@ -2,6 +2,10 @@
   font-size: 18px;
   display: flex;
   gap: 3rem;
+
+  @media screen and (max-width: 62.5rem) {
+    flex-direction: column;
+  }
 }
 
 .input {
@@ -37,4 +41,19 @@ label {
 .submit {
   display: flex;
   width: 100%;
+}
+
+@media screen and (max-width: 62.5rem) {
+  .root {
+    flex-direction: column;
+  }
+
+  .input {
+    &-cell {
+      width: 100%;
+    }
+    &-street {
+      width: 100%;
+    }
+  }
 }

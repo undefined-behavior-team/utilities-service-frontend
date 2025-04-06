@@ -11,3 +11,9 @@ export const METER_TYPES: Record<MeterTypes, MeterTypes> = {
   GAS: "GAS",
   ELECTRICITY: "ELECTRICITY",
 };
+
+export enum ApplicationStatusEnum {
+  "NEW",
+  "RECEIVED",
+  "DONE",
+}
