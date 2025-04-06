@@ -1,4 +1,4 @@
-import { CETLogoIcon } from "@/shared/icons";
+import { CETLogoTransparentIcon } from "@/shared/icons";
 import { useAppDispatch, useAppSelector } from "@/services/store/hooks";
 import {
   authTypeSelector,
@@ -41,37 +41,54 @@ export const LoginPage = () => {
     if (!chosen) {
       dispatch(setAuthType(null));
     }
-  }, []);
+  }, [chosen, dispatch]);
 
   return (
     <div className={styles.root}>
-      <CETLogoIcon width={286} height={200} />
-      {!chosen && (
-        <div className={styles.controls}>
-          <Button
-            color="red"
-            variant="solid"
-            className={classNames(styles.button, styles["button-admin"])}
-            onClick={handleAdminLogin}
+      <div className={styles.content}>
+        <CETLogoTransparentIcon width={267} height={187} />
+        {!chosen && (
+          <div className={styles.controls}>
+            <Button
+              color="geekblue"
+              variant="solid"
+              className={classNames(styles.button, styles["button-admin"])}
+              onClick={handleAdminLogin}
+            >
+              Войти как администратор
+            </Button>
+            <Button
+              color="cyan"
+              variant="solid"
+              className={classNames(styles.button, styles["button-user"])}
+              onClick={handleUserLogin}
+            >
+              Войти как пользователь
+            </Button>
+          </div>
+        )}
+        {chosen && (
+          <div className={styles.return} onClick={handleReturn}>
+            ← Назад
+          </div>
+        )}
+        <LoginForm authType={authType} loginStep={loginStep} />
+      </div>
+      <footer className={styles.footer}>
+        <hr className={styles.separator} />
+        <p>
+          Выполнено командой{" "}
+          <a
+            href="https://github.com/undefined-behavior-team"
+            className={styles.link}
+            target="_blank"
           >
-            Войти как администратор
-          </Button>
-          <Button
-            color="blue"
-            variant="solid"
-            className={classNames(styles.button, styles["button-user"])}
-            onClick={handleUserLogin}
-          >
-            Войти как пользователь
-          </Button>
-        </div>
-      )}
-      {chosen && (
-        <div className={styles.return} onClick={handleReturn}>
-          ← Назад
-        </div>
-      )}
-      <LoginForm authType={authType} loginStep={loginStep} />
+            "Undefined Behaviour Team"
+          </a>
+          (Леликов Иван, Ефимов Дмитрий, Кузьмин Артём, Мараев Александр, Лушин
+          Евгений)
+        </p>
+      </footer>
     </div>
   );
 };

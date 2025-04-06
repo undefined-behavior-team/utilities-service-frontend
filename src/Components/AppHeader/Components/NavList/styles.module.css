@@ -8,4 +8,10 @@
   border-top: 0;
   border-radius: 0 0 2rem 2rem;
   background-color: var(--primary-bg-base);
+}
+@media screen and (max-width: 62.5rem) {
+  .root {
+    display: flex;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=styles.module.css.map */

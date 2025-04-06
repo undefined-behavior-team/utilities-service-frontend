@@ -41,4 +41,9 @@
 }
 .logout:hover > svg > g {
   fill: var(--font-color-link);
+}
+
+.form {
+  width: 100%;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.module.css.map */

@@ -1,26 +1,26 @@
-import { Application, Status, User } from "@/shared/types";
+import { Application, User } from "@/shared/types";
 import { Tag } from "antd";
 import { ColumnType } from "antd/es/table";
 import styles from "../styles.module.css";
 import { ApplicationsHistory } from "../types";
 
-export const getStatusTag = (status: Status) => {
+export const getStatusTag = (status: number) => {
   switch (status) {
-    case "NEW": {
+    case 0: {
       return (
         <Tag className={styles["tag-status"]} color="blue">
           Новая
         </Tag>
       );
     }
-    case "RECEIVED": {
+    case 1: {
       return (
         <Tag className={styles["tag-status"]} color="orange">
           Принята
         </Tag>
       );
     }
-    case "DONE": {
+    case 2: {
       return (
         <Tag className={styles["tag-status"]} color="green">
           Выполнена
@@ -37,7 +37,24 @@ export const getStatusTag = (status: Status) => {
   }
 };
 
-export const getApplicationColumns: () => ColumnType[] = () => {
+export const getApplicationColumns: (user?: boolean) => ColumnType[] = (
+  user = false
+) => {
+  const userColumns = user
+    ? [
+        {
+          title: "ФИО",
+          dataIndex: ["fullName"],
+          key: "person",
+        },
+        {
+          title: "Адрес",
+          dataIndex: ["address"],
+          key: "address",
+        },
+      ]
+    : [];
+
   return [
     {
       title: "Дата",
@@ -59,16 +76,7 @@ export const getApplicationColumns: () => ColumnType[] = () => {
       dataIndex: ["name"],
       key: "topic",
     },
-    {
-      title: "ФИО",
-      dataIndex: ["fullName"],
-      key: "person",
-    },
-    {
-      title: "Адрес",
-      dataIndex: ["address"],
-      key: "address",
-    },
+    ...userColumns,
   ];
 };
 

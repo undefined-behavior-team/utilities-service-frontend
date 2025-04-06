@@ -11,7 +11,7 @@ export const ApplicationHistory = () => {
   return (
     <div>
       <AppTable
-        columns={getApplicationColumns()}
+        columns={getApplicationColumns(true)}
         dataSource={handleApplicationsHistory(user, data)}
       />
     </div>

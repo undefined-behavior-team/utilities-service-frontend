@@ -4,6 +4,8 @@ import {
   AddApplicationResponse,
   GetApplicationsRequest,
   GetApplicationsResponse,
+  UpdateApplicationRequest,
+  UpdateApplicationResponse,
 } from "./types";
 
 const applicationsApi = rootApi.injectEndpoints({
@@ -29,8 +31,32 @@ const applicationsApi = rootApi.injectEndpoints({
         body: body,
       }),
     }),
+    getApplicationsHomeowner: build.mutation<
+      GetApplicationsResponse,
+      GetApplicationsRequest
+    >({
+      query: (body) => ({
+        url: "homeowner/get_application",
+        method: "GET",
+        body: body,
+      }),
+    }),
+    updateApplicationHomeowner: build.mutation<
+      UpdateApplicationResponse,
+      UpdateApplicationRequest
+    >({
+      query: ({ body, id }) => ({
+        url: `homeowner/update_application/${id}`,
+        method: "PUT",
+        body: body,
+      }),
+    }),
   }),
 });
 
-export const { useAddApplicationMutation, useGetApplicationsMutation } =
-  applicationsApi;
+export const {
+  useAddApplicationMutation,
+  useGetApplicationsMutation,
+  useGetApplicationsHomeownerMutation,
+  useUpdateApplicationHomeownerMutation,
+} = applicationsApi;
