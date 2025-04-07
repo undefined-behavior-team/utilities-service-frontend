@@ -29,6 +29,9 @@ export const AdminPage = () => {
   const applications = useAppSelector(applicationsSelector);
   const dispatch = useAppDispatch();
 
+  const data = jwtDecode(token ?? "") as TokenData;
+  const role = data.role;
+
   const [getApplications] = useGetApplicationsHomeownerMutation();
 
   const handleReturn = () => {
@@ -42,17 +45,16 @@ export const AdminPage = () => {
   };
 
   useEffect(() => {
-    getApplications()
-      .unwrap()
-      .then((data) => {
-        dispatch(setApplications(data));
-      });
-  }, [dispatch, getApplications]);
+    if (role === "HOMEOWNER") {
+      getApplications()
+        .unwrap()
+        .then((data) => {
+          dispatch(setApplications(data));
+        });
+    }
+  }, [dispatch, getApplications, role]);
 
   const getContent = () => {
-    const data = jwtDecode(token ?? "") as TokenData;
-    const role = data.role;
-
     switch (role) {
       case "HOMEOWNER": {
         return (
