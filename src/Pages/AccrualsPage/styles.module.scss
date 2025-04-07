@@ -8,3 +8,11 @@
   font-size: 2rem;
   color: var(--font-color-secondary);
 }
+
+.table {
+  @media screen and (max-width: 62.5rem) {
+    max-width: 165%;
+    margin: 0 -28%;
+    text-align: center;
+  }
+}

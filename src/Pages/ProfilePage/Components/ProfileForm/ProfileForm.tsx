@@ -141,16 +141,6 @@ export const ProfileForm = () => {
             />
           </label>
         </div>
-        <div className={styles["input-cell"]}>
-          <label>
-            Электронная почта
-            <FormInput
-              className={styles.input}
-              placeholder="Электронная почта"
-              readOnly={!edit}
-            />
-          </label>
-        </div>
       </div>
       {!edit ? (
         <Button
@@ -184,3 +174,17 @@ export const ProfileForm = () => {
     </AppForm>
   );
 };
+
+/*
+
+        <div className={styles["input-cell"]}>
+          <label>
+            Электронная почта
+            <FormInput
+              className={styles.input}
+              placeholder="Электронная почта"
+              readOnly={!edit}
+            />
+          </label>
+        </div>
+*/

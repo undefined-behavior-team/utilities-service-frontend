@@ -46,4 +46,23 @@ label {
 .controls {
   display: flex;
   gap: 3rem;
+}
+
+@media screen and (max-width: 62.5rem) {
+  .root {
+    padding-bottom: 2rem;
+  }
+  .input-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .input-cell {
+    width: 100%;
+  }
+  .input-cell__address {
+    width: 100%;
+  }
+  .input-street {
+    width: 100%;
+  }
 }/*# sourceMappingURL=styles.module.css.map */

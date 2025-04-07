@@ -44,3 +44,33 @@ export const getAccrualsColumns: () => ColumnType[] = () => {
     },
   ];
 };
+
+export const getAccrualsColumnsMobile: () => ColumnType[] = () => {
+  return [
+    {
+      title: "Дата",
+      dataIndex: ["createdAt"],
+      key: "date",
+    },
+    {
+      title: "Операция",
+      dataIndex: ["paymentMethod"],
+      key: "operation",
+    },
+    {
+      title: `Оплачено`,
+      dataIndex: ["amount"],
+      key: "paid",
+    },
+    {
+      title: "Комиссия",
+      dataIndex: ["commission"],
+      key: "commission",
+    },
+    {
+      title: `Баланс`,
+      dataIndex: ["balance"],
+      key: "balance",
+    },
+  ];
+};

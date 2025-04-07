@@ -45,3 +45,26 @@ label {
     color: #ffffff;
   }
 }
+
+@media screen and (max-width: 62.5rem) {
+  .root {
+    padding-bottom: 2rem;
+  }
+
+  .input {
+    &-row {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    &-cell {
+      width: 100%;
+
+      &__address {
+        width: 100%;
+      }
+    }
+    &-street {
+      width: 100%;
+    }
+  }
+}
