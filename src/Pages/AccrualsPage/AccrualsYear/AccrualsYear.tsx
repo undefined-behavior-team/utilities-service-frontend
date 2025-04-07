@@ -1,9 +1,11 @@
 import { AppTable } from "@/shared/Components/AppTable";
-import { getAccrualsColumns } from "../helpers";
+import { getAccrualsColumns, getAccrualsColumnsMobile } from "../helpers";
 import { useAppSelector } from "@/services/store/hooks";
 //import { Button } from "antd";
 //import { useAddPaymentMutation } from "@/services/api/entities/payments/api";
 import { paymentsSelector } from "@/services/store/slices/payments/selectors";
+import { ResponsiveBlockSwitcher } from "@/shared/Components/ResponsiveBlockSwitcher";
+import styles from "../styles.module.css";
 
 export const AccrualsYear = () => {
   const data = useAppSelector(paymentsSelector);
@@ -36,7 +38,18 @@ export const AccrualsYear = () => {
   };*/
   return (
     <div>
-      <AppTable columns={getAccrualsColumns()} dataSource={data} />
+      <ResponsiveBlockSwitcher
+        desktop={<AppTable columns={getAccrualsColumns()} dataSource={data} />}
+        mobile={
+          <AppTable
+            columns={getAccrualsColumnsMobile()}
+            dataSource={data}
+            virtual
+            scroll={{ x: 342, y: 500 }}
+            rootClassName={styles.table}
+          />
+        }
+      />
     </div>
   );
 };

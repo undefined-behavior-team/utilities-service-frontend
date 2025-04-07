@@ -7,4 +7,12 @@
 .select-year {
   font-size: 2rem;
   color: var(--font-color-secondary);
+}
+
+@media screen and (max-width: 62.5rem) {
+  .table {
+    max-width: 165%;
+    margin: 0 -28%;
+    text-align: center;
+  }
 }/*# sourceMappingURL=styles.module.css.map */

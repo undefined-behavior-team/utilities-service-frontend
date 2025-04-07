@@ -1,0 +1,47 @@
+.root {
+  display: flex;
+  min-width: 35rem;
+  gap: 2rem;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--secondary-bg);
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 600;
+  @media screen and (max-width: 62.5rem) {
+    font-size: large;
+  }
+}
+
+.description {
+  color: var(--font-color-secondary);
+  font-size: 2rem;
+  @media screen and (max-width: 62.5rem) {
+    font-size: small;
+  }
+}
+
+.text-block {
+  width: auto;
+  max-width: 60%;
+}
+
+.image {
+  display: flex;
+  width: 40%;
+  min-width: 40%;
+  max-width: 50rem;
+  //min-height: 16rem;
+  //min-width: 9rem;
+  & > img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+.main {
+  width: 80%;
+}

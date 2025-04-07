@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import { AppInput } from "@/shared/Components/AppInput";
 import { AppForm } from "@/shared/Components/AppForm";
 import { Button } from "antd";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -45,14 +44,6 @@ export const AddMeterForm: FC<Props> = ({ setAddMeter }) => {
           />
         </label>
         <label>
-          Предыдущие показания
-          <AppInput
-            className={styles.input}
-            placeholder="Введите показания"
-            disabled
-          />
-        </label>
-        <label>
           Текущие показания
           <FormInput
             name="data"
@@ -72,3 +63,15 @@ export const AddMeterForm: FC<Props> = ({ setAddMeter }) => {
     </AppForm>
   );
 };
+
+/*
+
+        <label>
+          Предыдущие показания
+          <AppInput
+            className={styles.input}
+            placeholder="Введите показания"
+            disabled
+          />
+        </label>
+*/

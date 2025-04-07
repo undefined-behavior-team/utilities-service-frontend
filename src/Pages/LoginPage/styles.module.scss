@@ -12,6 +12,24 @@
     background-size: 40%;
     background-position: 15% 50%;
   }
+
+  background: linear-gradient(
+      rgba(256, 256, 256, 0.7),
+      rgba(256, 256, 256, 0.7)
+    ),
+    no-repeat url("/login-bg.png");
+  background-size: 50%;
+  background-position: 25% 66%;
+
+  @media screen and (max-width: 35rem) {
+    background: linear-gradient(
+        rgba(256, 256, 256, 0.7),
+        rgba(256, 256, 256, 0.7)
+      ),
+      no-repeat url("/login-bg.png");
+    background-size: 70%;
+    background-position: 25% 66%;
+  }
 }
 
 .content {

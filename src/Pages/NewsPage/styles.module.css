@@ -3,8 +3,13 @@
   width: 60%;
   margin: auto;
   margin-top: 5rem;
-  background-color: var(--secondary-bg);
   gap: 3rem;
+  flex-direction: column;
+}
+@media screen and (max-width: 62.5rem) {
+  .root {
+    width: 90%;
+  }
 }
 
 .heading {
@@ -15,4 +20,24 @@
 .description {
   color: var(--font-color-secondary);
   font-size: 2rem;
+}
+
+.other {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+@media screen and (max-width: 62.5rem) {
+  .other {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.news {
+  width: 40rem;
+  height: 10rem;
+}
+.news div {
+  font-size: small !important;
 }/*# sourceMappingURL=styles.module.css.map */

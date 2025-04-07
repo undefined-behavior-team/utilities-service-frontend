@@ -11,3 +11,4 @@ export { PlusInCircleIcon } from "./PlusInCircleIcon";
 export { ElectricityIcon } from "./ElectricityIcon";
 export { DocumentIcon } from "./DocumentIcon";
 export { MenuIcon } from "./MenuIcon";
+export { LogoIcon } from "./LogoIcon";

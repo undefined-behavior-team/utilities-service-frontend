@@ -20,7 +20,7 @@ export const AccrualsPage = () => {
     getPayments()
       .unwrap()
       .then((data) => dispatch(setPayments(data)));
-  }, [dispatch]);
+  }, [dispatch, getPayments]);
 
   return (
     <div className={styles.root}>

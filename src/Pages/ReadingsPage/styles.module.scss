@@ -12,3 +12,11 @@
 .tabs-item {
   font-size: 16px;
 }
+
+.table {
+  @media screen and (max-width: 62.5rem) {
+    max-width: 114%;
+    margin: 0 -8%;
+    text-align: center;
+  }
+}

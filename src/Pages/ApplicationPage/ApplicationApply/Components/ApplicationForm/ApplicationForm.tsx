@@ -138,15 +138,6 @@ export const ApplicationForm = () => {
             />
           </label>
         </div>
-        <div className={styles["input-cell"]}>
-          <label>
-            Электронная почта
-            <FormInput
-              className={styles.input}
-              placeholder="Электронная почта"
-            />
-          </label>
-        </div>
       </div>
       <div
         className={classNames(styles["input-row"], styles["input-row__text"])}
@@ -178,3 +169,17 @@ export const ApplicationForm = () => {
     </AppForm>
   );
 };
+
+/*
+
+<div className={styles["input-cell"]}>
+          <label>
+            Электронная почта
+            <FormInput
+              className={styles.input}
+              placeholder="Электронная почта"
+            />
+          </label>
+        </div>
+
+*/
