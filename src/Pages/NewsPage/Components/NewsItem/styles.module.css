@@ -1,14 +1,19 @@
 .root {
   display: flex;
-  min-width: 35rem;
-  gap: 2rem;
-  width: 100%;
   overflow: hidden;
-  background-color: var(--secondary-bg);
+  background-color: var(--dark-bg);
+  border-radius: 1rem;
+  outline: 2px solid var(--primary-border);
+  border: 0.5px #446fbe solid;
+}
+@media screen and (max-width: 34rem) {
+  .root {
+    flex-direction: column;
+  }
 }
 
 .heading {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 @media screen and (max-width: 62.5rem) {
@@ -19,7 +24,7 @@
 
 .description {
   color: var(--font-color-secondary);
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 @media screen and (max-width: 62.5rem) {
   .description {
@@ -28,22 +33,36 @@
 }
 
 .text-block {
-  width: auto;
-  max-width: 60%;
+  width: 40%;
+  padding: 1rem 2rem;
+}
+@media screen and (max-width: 38rem) {
+  .text-block {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 34rem) {
+  .text-block {
+    width: 100%;
+  }
 }
 
 .image {
   display: flex;
-  width: 40%;
-  min-width: 40%;
-  max-width: 50rem;
 }
 .image > img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
 }
 
-.main {
+.image-block {
   width: 80%;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 34rem) {
+  .image-block {
+    width: 100%;
+  }
 }/*# sourceMappingURL=styles.module.css.map */

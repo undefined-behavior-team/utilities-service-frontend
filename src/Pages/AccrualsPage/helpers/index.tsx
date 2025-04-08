@@ -38,9 +38,9 @@ export const getAccrualsColumns: () => ColumnType[] = () => {
       key: "balance",
     },
     {
-      title: "Чек",
-      dataIndex: ["check"],
-      key: "check",
+      title: "Статус",
+      dataIndex: ["status"],
+      key: "status",
     },
   ];
 };
@@ -63,14 +63,14 @@ export const getAccrualsColumnsMobile: () => ColumnType[] = () => {
       key: "paid",
     },
     {
-      title: "Комиссия",
-      dataIndex: ["commission"],
-      key: "commission",
-    },
-    {
       title: `Баланс`,
       dataIndex: ["balance"],
       key: "balance",
+    },
+    {
+      title: "Статус",
+      dataIndex: ["status"],
+      key: "status",
     },
   ];
 };
