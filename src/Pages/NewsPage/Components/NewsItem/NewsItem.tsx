@@ -16,8 +16,10 @@ export const NewsItem: FC<HtmlHTMLAttributes<HTMLDivElement> & Props> = ({
 }) => {
   return (
     <div className={classNames(styles.root, props.className)}>
-      <div className={styles.image}>
-        <img src={img} alt="news" />
+      <div className={styles["image-block"]}>
+        <div className={styles.image}>
+          <img src={img} alt="news" />
+        </div>
       </div>
       <div className={styles["text-block"]}>
         <div className={styles.heading}>{heading}</div>
