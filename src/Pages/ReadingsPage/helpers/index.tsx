@@ -49,6 +49,26 @@ export const getTypeText = (meterType?: MeterTypes) => {
   }
 };
 
+export const getCountText = (meterType?: MeterTypes) => {
+  switch (meterType) {
+    case "COLD_WATER": {
+      return "м³";
+    }
+    case "HOT_WATER": {
+      return "м³";
+    }
+    case "GAS": {
+      return "м³";
+    }
+    case "ELECTRICITY": {
+      return "кВт·ч";
+    }
+    default: {
+      return "м³";
+    }
+  }
+};
+
 export const getReadingsHistoryColumns: () => ColumnType[] = () => {
   return [
     {

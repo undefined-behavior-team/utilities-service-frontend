@@ -14,7 +14,9 @@ export const MeterCard: FC<Props> = ({ meterType, meterCount }) => {
       <div className={styles.icon}>{getTypeIcon(meterType)}</div>
       <div className={styles.data}>
         <h5>{getTypeText(meterType)}</h5>
-        <p>{meterCount} м. куб.</p>
+        <p>
+          {meterCount} {getCountText(meterType)}
+        </p>
       </div>
     </div>
   );
