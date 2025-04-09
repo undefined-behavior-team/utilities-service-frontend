@@ -1,5 +1,9 @@
 import { MeterTypes } from "@/shared/types";
-import { getTypeIcon, getTypeText } from "@/Pages/ReadingsPage/helpers";
+import {
+  getCountText,
+  getTypeIcon,
+  getTypeText,
+} from "@/Pages/ReadingsPage/helpers";
 import type { FC } from "react";
 import styles from "./styles.module.css";
 
