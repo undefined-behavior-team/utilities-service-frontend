@@ -31,8 +31,12 @@ export const ApplicationModal: FC<ModalProps> = ({ ...props }) => {
   const [updateApplication] = useUpdateApplicationHomeownerMutation();
 
   const submit = (data: SelectedApplicationFormValues) => {
-    updateApplication({ body: { ...data }, id: selectedApplication?.id ?? "" });
-    window.location.reload();
+    updateApplication({
+      body: { ...data },
+      id: selectedApplication?.id ?? "",
+    }).then(() => {
+      window.location.reload();
+    });
   };
 
   const modalClassNames = {
