@@ -14,8 +14,6 @@ export const Meters = () => {
   const [addMeter, setAddMeter] = useState(false);
   const navigate = useNavigate();
 
-  console.log("data", data);
-
   useEffect(() => {}, [addMeter]);
   return (
     <div className={styles.root}>
